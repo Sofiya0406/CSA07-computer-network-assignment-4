@@ -1,0 +1,23 @@
+Logical campus topology (reduced Packet Tracer model)
+
+ISP-1 Router ----\
+                  Edge Firewall/Router ---- CORE-A ===== CORE-B
+ISP-2 Router ----/                              |           |
+                                               |           |
+                                      DIST-ACADEMIC     DIST-LABS
+                                          |                 |
+                                      ACCESS-SW         ACCESS-SW
+                                          |                 |
+                                      Staff/Student      Lab PCs
+
+Data Centre server: dual-connected to CORE-A and CORE-B.
+Guest, Staff, Student, CCTV, Labs, Servers and Management use separate VLANs.
+Use fibre for inter-building links and Cat6A for endpoint links.
+
+Simulation checklist:
+1. Configure VLANs and trunk links.
+2. Configure SVIs or router-on-a-stick and DHCP.
+3. Apply ACLs to block Guest access to Staff/CCTV/Servers.
+4. Verify allowed and denied pings.
+5. Shut one core uplink and verify alternate path.
+6. Save .pkt and screenshots.
